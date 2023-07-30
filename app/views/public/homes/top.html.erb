@@ -1,2 +1,28 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class = "notice"></div>
+<div class = "container">
+  <p class = "d-flex justify-content-center py-4">
+    ようこそ、ながのCAKEへ！<br>
+    このサイトは、ケーキ販売のECサイトになります。<br>
+    会員でない方も商品の閲覧はできますが、<br>
+    購入には会員登録が必要になります。
+  </p>
+  <h2>新着商品</h2>
+  <div class = "album py-5 bg-body-tertiary">
+    <div class = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @items.each do |item| %>
+        <%= link_to public_item_path(item.id) do %>
+          <div class="card shadow-sm">
+            <%= image_tag item.get_image %>
+            <div class="card-body">
+              <%= item.name %>
+              <p>￥<%= item.price %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class = "pull_right">
+    <%= link_to "すべての商品を見る＞", public_items_path %>
+  </div>
+</div>

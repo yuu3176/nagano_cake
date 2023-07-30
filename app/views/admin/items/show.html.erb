@@ -1,2 +1,8 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<div class = "container">
+  <h4>商品詳細</h4>
+  <%= image_tag @item.get_image %>
+  <p>商品名&emsp;<%= @item.name %></p>
+  <p>商品説明&emsp;<%= @item.introduction %></p>
+  <p>税込価格(税抜価格)&emsp;<%= @item.with_tax_price %> (<%= @item.price %>)円</p>
+  <%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %>
+</div>

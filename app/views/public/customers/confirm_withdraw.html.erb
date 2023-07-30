@@ -1,0 +1,12 @@
+<div class = "container">
+  <div class = "text-center">
+    <span class = "py-3"><strong>本当に退会しますか？</strong></span>
+    <p class = "py-3">
+      退会すると会員登録情報や<br>
+      これまでの購入履歴が閲覧できなくなります。<br>
+      退会する場合は、「退会する」をクリックしてください。
+    </p>
+    <%= link_to "退会しない", public_customer_path(current_customer), class: "btn btn-primary ms-3" %>
+    <%= link_to "退会する", public_customer_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger ms-3" %>
+  </div>
+</div>
